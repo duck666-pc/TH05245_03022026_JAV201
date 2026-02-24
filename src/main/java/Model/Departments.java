@@ -17,7 +17,7 @@ import java.util.Date;
 public class Departments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "DepartmentId")
     private Integer id;
 
     @Column(name = "DeptCode")

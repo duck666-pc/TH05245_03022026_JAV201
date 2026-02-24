@@ -17,8 +17,8 @@ public class EmployeesController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uri = req.getRequestURI();
         if (uri.contains("/employees")) {
-            EmployeesRepository employeesRepository = new EmployeesRepository(); // Khởi tạo trong method
-            List<Employees> listEmployees = employeesRepository.getAll();        // Lấy data trong method
+            EmployeesRepository employeesRepository = new EmployeesRepository();
+            List<Employees> listEmployees = employeesRepository.getAll();
             req.setAttribute("listEmployees", listEmployees);
             req.getRequestDispatcher("/view-Employees.jsp").forward(req, resp);
         }

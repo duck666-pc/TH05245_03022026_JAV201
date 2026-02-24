@@ -38,7 +38,7 @@
             <td>${ep.soDienThoai}</td>
             <td>${ep.luong}</td>
             <td>${ep.trangThai}</td>
-            <td>${ep.idPhong != null ? ep.idPhong.id : 'N/A'}</td>
+            <td>${ep.idPhong != null ? ep.idPhong.tenPhong : 'N/A'}</td>
         </tr>
     </c:forEach>
     </tbody>

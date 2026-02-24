@@ -1,11 +1,10 @@
 package Model;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,7 +15,7 @@ import java.util.Date;
 public class Employees {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "EmployeeId")
     private Integer id;
 
     @Column(name = "EmpCode")
@@ -26,7 +25,7 @@ public class Employees {
     private String ten;
 
     @Column(name = "Gender")
-    private Boolean gioiTinh;
+    private String gioiTinh;
 
     @Column(name = "Email")
     private String email;
@@ -35,11 +34,10 @@ public class Employees {
     private String soDienThoai;
 
     @Column(name = "Salary")
-    private Float luong;
+    private Double luong;
 
     @Column(name = "Status")
-    private Boolean trangThai;
-
+    private String trangThai;
     @ManyToOne
     @JoinColumn(name = "DepartmentId")
     private Departments idPhong;
