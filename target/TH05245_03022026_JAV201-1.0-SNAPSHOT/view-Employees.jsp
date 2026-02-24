@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: DELL
@@ -37,7 +38,7 @@
             <td>${ep.soDienThoai}</td>
             <td>${ep.luong}</td>
             <td>${ep.trangThai}</td>
-            <td>${ep.idPhong != null ? ep.DepartmentsId.id : 'N/A'}</td
+            <td>${ep.idPhong != null ? ep.idPhong.id : 'N/A'}</td>
         </tr>
     </c:forEach>
     </tbody>

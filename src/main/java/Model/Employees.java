@@ -39,7 +39,7 @@ public class Employees {
     @Column(name = "Status")
     private Boolean trangThai;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "DepartmentId")
-    private Integer idPhong;
+    private Departments idPhong;
 }

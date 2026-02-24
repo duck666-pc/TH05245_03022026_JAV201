@@ -20,6 +20,7 @@ public class DepartmentsController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uri = req.getRequestURI();
         if (uri.contains("/departments")) {
+            listDepartments = departmentsRepository.getAll();
             req.setAttribute("listDepartments", listDepartments);
             req.getRequestDispatcher("/view.jsp").forward(req, resp);
         }
