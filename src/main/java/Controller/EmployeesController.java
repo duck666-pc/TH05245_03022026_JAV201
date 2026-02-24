@@ -13,13 +13,12 @@ import java.util.List;
 
 @WebServlet(name = "employees", value = "/employees")
 public class EmployeesController extends HttpServlet {
-    EmployeesRepository employeesRepository = new EmployeesRepository();
-    List<Employees> listEmployees = new ArrayList<>();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uri = req.getRequestURI();
         if (uri.contains("/employees")) {
-            listEmployees = employeesRepository.getAll();
+            EmployeesRepository employeesRepository = new EmployeesRepository(); // Khởi tạo trong method
+            List<Employees> listEmployees = employeesRepository.getAll();        // Lấy data trong method
             req.setAttribute("listEmployees", listEmployees);
             req.getRequestDispatcher("/view-Employees.jsp").forward(req, resp);
         }

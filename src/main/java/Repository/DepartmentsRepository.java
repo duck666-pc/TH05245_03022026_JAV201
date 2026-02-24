@@ -12,9 +12,14 @@ public class DepartmentsRepository {
         session = HibernateConfig.getFACTORY().openSession();
     }
     public List<Departments> getAll() {
-        return session.createQuery("SELECT dh FROM Departments dh").getResultList();
+        try (Session session = HibernateConfig.getFACTORY().openSession()) {
+            return session.createQuery("FROM Departments", Departments.class).getResultList();
+        }
     }
-    public Departments getById(Integer id){
-        return session.find(Departments.class, id);
+
+    public Departments getById(Integer id) {
+        try (Session session = HibernateConfig.getFACTORY().openSession()) {
+            return session.find(Departments.class, id);
+        }
     }
 }
