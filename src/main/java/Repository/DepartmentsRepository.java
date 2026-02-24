@@ -7,10 +7,7 @@ import org.hibernate.Session;
 import java.util.List;
 
 public class DepartmentsRepository {
-    private Session session = null;
-    public DepartmentsRepository() {
-        session = HibernateConfig.getFACTORY().openSession();
-    }
+
     public List<Departments> getAll() {
         try (Session session = HibernateConfig.getFACTORY().openSession()) {
             return session.createQuery("FROM Departments", Departments.class).getResultList();
